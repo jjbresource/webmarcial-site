@@ -213,6 +213,16 @@
       transform: translateY(-2px);
     }
 
+    .btn-tiktok{
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.18);
+    }
+
+    .btn-tiktok:hover{
+      background: rgba(255,255,255,0.18);
+      transform: translateY(-2px);
+    }
+
     .small{
       font-size:12px;
       opacity:0.75;
@@ -367,14 +377,15 @@
         <h2>WebMarcial<br/>mais bonito e com área do cliente</h2>
 
         <p>
-          Agora seu site tem <b>login</b> e <b>registro</b> para clientes terem mais privacidade.
-          Eles acessam uma área exclusiva com segurança usando Firebase.
+          Agora seu site tem <b>login</b> e <b>registro</b>
+          para clientes terem mais privacidade.
         </p>
 
         <div class="btns">
           <a class="btn btn-primary" href="#loja">🛒 Ver Produtos</a>
           <a class="btn btn-whats" href="https://wa.me/55SEUNUMEROAQUI" target="_blank">📲 WhatsApp</a>
           <a class="btn btn-insta" href="https://instagram.com/stylejemarcial" target="_blank">📸 Instagram</a>
+          <a class="btn btn-tiktok" href="https://www.tiktok.com/@stylersmarcial0" target="_blank">🎵 TikTok</a>
         </div>
 
         <p class="small">
@@ -396,8 +407,8 @@
             <p>Funciona no GitHub Pages sem pagar servidor.</p>
           </div>
           <div class="card">
-            <h4>📲 Contato</h4>
-            <p>Botões diretos para WhatsApp e Instagram.</p>
+            <h4>📲 Redes</h4>
+            <p>Instagram + TikTok em 1 clique.</p>
           </div>
         </div>
       </div>
@@ -586,6 +597,7 @@
         <div class="btns">
           <a class="btn btn-whats" href="https://wa.me/55SEUNUMEROAQUI" target="_blank">📲 WhatsApp</a>
           <a class="btn btn-insta" href="https://instagram.com/stylejemarcial" target="_blank">📸 Instagram</a>
+          <a class="btn btn-tiktok" href="https://www.tiktok.com/@stylersmarcial0" target="_blank">🎵 TikTok</a>
           <a class="btn btn-primary" href="#loja">🛒 Ver Loja</a>
         </div>
       </div>
@@ -621,11 +633,9 @@
       appId: "COLE_AQUI"
     };
 
-    // INICIALIZA
     const app = initializeApp(firebaseConfig);
     const auth = getAuth(app);
 
-    // ELEMENTOS
     const loginBox = document.getElementById("loginBox");
     const registerBox = document.getElementById("registerBox");
     const privateBox = document.getElementById("privateBox");
@@ -671,11 +681,9 @@
       regMsg.textContent = "";
     }
 
-    // BOTÕES TROCA DE TELA
-    btnShowRegister.addEventListener("click", showRegister);
-    btnShowLogin.addEventListener("click", showLogin);
+    btnShowRegister?.addEventListener("click", showRegister);
+    btnShowLogin?.addEventListener("click", showLogin);
 
-    // LOGIN
     btnLogin.addEventListener("click", async () => {
       loginMsg.textContent = "";
       try{
@@ -690,7 +698,6 @@
       }
     });
 
-    // REGISTRO
     btnRegister.addEventListener("click", async () => {
       regMsg.textContent = "";
       try{
@@ -705,12 +712,10 @@
       }
     });
 
-    // LOGOUT
     btnLogout.addEventListener("click", async () => {
       await signOut(auth);
     });
 
-    // VERIFICAR ESTADO DO LOGIN
     onAuthStateChanged(auth, (user) => {
       if(user){
         showPrivate(user.email);
