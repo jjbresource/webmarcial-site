@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>WebMarcial</title>
+  <title>WebMarcial - Área do Cliente</title>
 
   <style>
     *{
@@ -16,10 +16,11 @@
       font-family: Arial, sans-serif;
       background: #070A13;
       color: #fff;
-      overflow-x: hidden;
+      overflow-x:hidden;
+      min-height:100vh;
     }
 
-    /* FUNDO COM EFEITO */
+    /* FUNDO BONITO */
     .bg{
       position: fixed;
       inset: 0;
@@ -39,13 +40,14 @@
       pointer-events: none;
     }
 
-    /* HEADER */
-    header{
-      max-width: 1100px;
-      margin: 30px auto 0 auto;
-      padding: 20px;
+    /* CONTAINER */
+    .wrap{
+      max-width:1100px;
+      margin: 30px auto;
+      padding: 0 18px 50px 18px;
     }
 
+    /* TOPBAR */
     .topbar{
       display:flex;
       align-items:center;
@@ -56,6 +58,7 @@
       background: rgba(20, 26, 42, 0.60);
       border: 1px solid rgba(255,255,255,0.08);
       backdrop-filter: blur(10px);
+      box-shadow: 0 18px 45px rgba(0,0,0,0.35);
     }
 
     .brand{
@@ -78,7 +81,7 @@
 
     .brand h1{
       font-size:18px;
-      font-weight:800;
+      font-weight:900;
       letter-spacing:0.5px;
     }
 
@@ -90,15 +93,15 @@
 
     nav{
       display:flex;
-      gap:14px;
-      flex-wrap: wrap;
+      gap:12px;
+      flex-wrap:wrap;
       justify-content:center;
     }
 
     nav a{
       text-decoration:none;
       color:#fff;
-      font-weight:700;
+      font-weight:800;
       font-size:13px;
       opacity:0.85;
       padding:8px 12px;
@@ -114,19 +117,16 @@
 
     /* HERO */
     .hero{
-      max-width:1100px;
-      margin: 18px auto 0 auto;
-      padding: 30px 20px;
       display:grid;
       grid-template-columns: 1.2fr 0.8fr;
-      gap:18px;
-      align-items:stretch;
+      gap:16px;
+      margin-top:18px;
     }
 
-    .hero-left{
-      padding:28px;
+    .glass{
+      padding:24px;
       border-radius:22px;
-      background: rgba(20, 26, 42, 0.65);
+      background: rgba(20, 26, 42, 0.62);
       border: 1px solid rgba(255,255,255,0.09);
       backdrop-filter: blur(10px);
       box-shadow: 0 18px 50px rgba(0,0,0,0.35);
@@ -137,7 +137,7 @@
       align-items:center;
       gap:10px;
       font-size:12px;
-      font-weight:800;
+      font-weight:900;
       padding:10px 12px;
       border-radius: 999px;
       background: rgba(255,255,255,0.08);
@@ -146,25 +146,25 @@
       color:#e8e8ff;
     }
 
-    .hero-left h2{
-      font-size:38px;
+    .hero h2{
+      font-size:34px;
       line-height:1.1;
       margin-bottom:12px;
     }
 
-    .hero-left p{
-      opacity:0.85;
-      font-size:15px;
+    .hero p{
+      opacity:0.88;
+      font-size:14px;
       line-height:1.6;
-      margin-bottom:18px;
-      max-width: 580px;
+      margin-bottom:16px;
     }
 
-    .cta{
+    /* BOTÕES */
+    .btns{
       display:flex;
-      gap:12px;
       flex-wrap:wrap;
-      margin-top: 10px;
+      gap:10px;
+      margin-top:12px;
     }
 
     .btn{
@@ -172,7 +172,7 @@
       cursor:pointer;
       padding:12px 16px;
       border-radius: 14px;
-      font-weight:800;
+      font-weight:900;
       font-size:14px;
       transition: 0.2s;
       display:inline-flex;
@@ -180,6 +180,7 @@
       gap:10px;
       text-decoration:none;
       color:#fff;
+      justify-content:center;
     }
 
     .btn-primary{
@@ -212,77 +213,39 @@
       transform: translateY(-2px);
     }
 
-    /* HERO RIGHT (CAIXA INFO) */
-    .hero-right{
-      padding:28px;
-      border-radius:22px;
-      background: rgba(20, 26, 42, 0.55);
-      border: 1px solid rgba(255,255,255,0.09);
-      backdrop-filter: blur(10px);
-      box-shadow: 0 18px 50px rgba(0,0,0,0.25);
-    }
-
-    .hero-right h3{
-      font-size:16px;
-      margin-bottom:10px;
-    }
-
-    .list{
-      display:flex;
-      flex-direction:column;
-      gap:10px;
+    .small{
+      font-size:12px;
+      opacity:0.75;
       margin-top:10px;
     }
 
-    .item{
-      display:flex;
-      align-items:center;
-      gap:10px;
-      padding:12px;
-      border-radius:16px;
-      background: rgba(255,255,255,0.06);
-      border: 1px solid rgba(255,255,255,0.08);
-      font-size:13px;
-      opacity:0.90;
-    }
-
-    .dot{
-      width:10px;
-      height:10px;
-      border-radius:50%;
-      background: #22c55e;
-      box-shadow: 0 0 0 6px rgba(34,197,94,0.12);
-    }
-
-    /* SEÇÕES */
+    /* CARDS GERAIS */
     section{
-      max-width:1100px;
-      margin: 0 auto;
-      padding: 20px 20px 40px 20px;
+      margin-top:18px;
     }
 
     .section-title{
-      font-size:20px;
-      margin-bottom:10px;
+      font-size:18px;
+      font-weight:900;
+      margin-bottom:8px;
     }
 
     .section-sub{
+      font-size:13px;
       opacity:0.80;
-      font-size:14px;
-      margin-bottom:18px;
+      margin-bottom:14px;
     }
 
-    /* CARDS */
     .grid{
       display:grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap:16px;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap:14px;
     }
 
     .card{
       padding:18px;
       border-radius:20px;
-      background: rgba(20, 26, 42, 0.60);
+      background: rgba(20, 26, 42, 0.58);
       border: 1px solid rgba(255,255,255,0.09);
       backdrop-filter: blur(10px);
       transition:0.2s;
@@ -296,11 +259,12 @@
 
     .card h4{
       margin-bottom:8px;
-      font-size:16px;
+      font-size:15px;
+      font-weight:900;
     }
 
     .card p{
-      opacity:0.80;
+      opacity:0.82;
       font-size:13px;
       line-height:1.5;
       margin-bottom:12px;
@@ -312,203 +276,449 @@
       margin-bottom:10px;
     }
 
-    .small{
-      font-size:12px;
-      opacity:0.75;
+    /* LOGIN / REGISTER */
+    .form-row{
+      margin-top:12px;
     }
 
+    label{
+      display:block;
+      font-size:12px;
+      margin-bottom:6px;
+      opacity:0.9;
+      font-weight:800;
+    }
+
+    input{
+      width:100%;
+      padding:12px 12px;
+      border-radius:14px;
+      border:1px solid rgba(255,255,255,0.12);
+      background: rgba(0,0,0,0.20);
+      color:#fff;
+      outline:none;
+    }
+
+    input::placeholder{
+      color: rgba(255,255,255,0.45);
+    }
+
+    .msg{
+      margin-top:10px;
+      font-size:12px;
+      opacity:0.95;
+    }
+
+    .success{ color:#22c55e; }
+    .error{ color:#ff5a5a; }
+
+    .hidden{ display:none !important; }
+
     footer{
-      max-width:1100px;
-      margin: 0 auto;
-      padding: 25px 20px 40px 20px;
-      opacity:0.7;
+      margin-top:30px;
       text-align:center;
+      opacity:0.7;
       font-size:13px;
     }
 
-    /* RESPONSIVO */
     @media (max-width: 900px){
       .hero{
         grid-template-columns: 1fr;
       }
-      .hero-left h2{
-        font-size:30px;
-      }
       nav{
         display:none;
+      }
+      .hero h2{
+        font-size:28px;
       }
     }
   </style>
 </head>
 
 <body>
-
   <div class="bg"></div>
   <div class="noise"></div>
 
-  <!-- HEADER -->
-  <header>
+  <div class="wrap">
+
+    <!-- TOPBAR -->
     <div class="topbar">
       <div class="brand">
         <div class="logo">🥋</div>
         <div>
           <h1>WebMarcial</h1>
-          <p>Loja + Treinos + Conteúdos</p>
+          <p>Loja + Treinos + Área Privada</p>
         </div>
       </div>
 
       <nav>
-        <a href="#conteudos">Conteúdos</a>
         <a href="#loja">Loja</a>
+        <a href="#conteudos">Conteúdos</a>
+        <a href="#cliente">Área do Cliente</a>
         <a href="#contato">Contato</a>
       </nav>
     </div>
-  </header>
 
-  <!-- HERO -->
-  <div class="hero">
-    <div class="hero-left">
-      <div class="badge">🔥 Jiu-Jitsu + Loja • feito pra vendas</div>
+    <!-- HERO -->
+    <div class="hero">
+      <div class="glass">
+        <div class="badge">🔥 Sistema com Login + Registro (privado)</div>
 
-      <h2>Seu site WebMarcial<br>mais bonito e profissional</h2>
+        <h2>WebMarcial<br/>mais bonito e com área do cliente</h2>
 
-      <p>
-        Aqui você pode vender produtos de Jiu-Jitsu, divulgar treinos e
-        direcionar o cliente pro WhatsApp ou Instagram em 1 clique.
-      </p>
+        <p>
+          Agora seu site tem <b>login</b> e <b>registro</b> para clientes terem mais privacidade.
+          Eles acessam uma área exclusiva com segurança usando Firebase.
+        </p>
 
-      <div class="cta">
-        <a class="btn btn-primary" href="#loja">🛒 Ver Loja</a>
+        <div class="btns">
+          <a class="btn btn-primary" href="#loja">🛒 Ver Produtos</a>
+          <a class="btn btn-whats" href="https://wa.me/55SEUNUMEROAQUI" target="_blank">📲 WhatsApp</a>
+          <a class="btn btn-insta" href="https://instagram.com/SEUINSTAGRAM" target="_blank">📸 Instagram</a>
+        </div>
 
-        <a class="btn btn-whats" href="https://wa.me/55SEUNUMEROAQUI" target="_blank">
-          📲 WhatsApp
-        </a>
-
-        <a class="btn btn-insta" href="https://instagram.com/SEUINSTAGRAM" target="_blank">
-          📸 Instagram
-        </a>
+        <p class="small">
+          ⚠️ Troque <b>SEUNUMEROAQUI</b> e <b>SEUINSTAGRAM</b> pelos seus dados.
+        </p>
       </div>
 
-      <p class="small" style="margin-top:12px;">
-        ⚠️ Troque <b>SEUNUMEROAQUI</b> e <b>SEUINSTAGRAM</b> pelos seus dados.
-      </p>
-    </div>
+      <div class="glass">
+        <h3 class="section-title">✅ Benefícios</h3>
+        <p class="section-sub">Seu site agora parece profissional de verdade.</p>
 
-    <div class="hero-right">
-      <h3>✅ O que você encontra aqui</h3>
-
-      <div class="list">
-        <div class="item">
-          <span class="dot"></span>
-          <span>Treinos e técnicas na prática</span>
-        </div>
-
-        <div class="item">
-          <span class="dot"></span>
-          <span>Produtos: kimono, rashguard, faixa</span>
-        </div>
-
-        <div class="item">
-          <span class="dot"></span>
-          <span>Contato direto via WhatsApp</span>
-        </div>
-
-        <div class="item">
-          <span class="dot"></span>
-          <span>Design moderno e responsivo</span>
+        <div class="grid">
+          <div class="card">
+            <h4>🔐 Privacidade</h4>
+            <p>Área do cliente só entra com login.</p>
+          </div>
+          <div class="card">
+            <h4>⚡ Rápido</h4>
+            <p>Funciona no GitHub Pages sem pagar servidor.</p>
+          </div>
+          <div class="card">
+            <h4>📲 Contato</h4>
+            <p>Botões diretos para WhatsApp e Instagram.</p>
+          </div>
         </div>
       </div>
     </div>
+
+    <!-- LOJA -->
+    <section id="loja">
+      <div class="glass">
+        <h3 class="section-title">🛒 Loja</h3>
+        <p class="section-sub">Exemplo de vitrine (você pode mudar os preços).</p>
+
+        <div class="grid">
+          <div class="card">
+            <h4>🥋 Kimono Premium</h4>
+            <p>Kimono resistente para treino e competição.</p>
+            <div class="price">R$ 399,90</div>
+            <a class="btn btn-primary" href="#contato">Comprar</a>
+          </div>
+
+          <div class="card">
+            <h4>👕 Rashguard</h4>
+            <p>Rashguard firme e confortável para No-Gi.</p>
+            <div class="price">R$ 149,90</div>
+            <a class="btn btn-primary" href="#contato">Comprar</a>
+          </div>
+
+          <div class="card">
+            <h4>🎽 Faixa</h4>
+            <p>Faixa reforçada (várias cores disponíveis).</p>
+            <div class="price">R$ 59,90</div>
+            <a class="btn btn-primary" href="#contato">Comprar</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTEÚDOS -->
+    <section id="conteudos">
+      <div class="glass">
+        <h3 class="section-title">📹 Conteúdos</h3>
+        <p class="section-sub">Conteúdos que você pode postar no seu canal.</p>
+
+        <div class="grid">
+          <div class="card">
+            <h4>🔥 Armlock</h4>
+            <p>Explicação prática + erros mais comuns.</p>
+          </div>
+          <div class="card">
+            <h4>🌀 Raspagens</h4>
+            <p>Saídas simples e eficientes da guarda.</p>
+          </div>
+          <div class="card">
+            <h4>🛡️ Defesa</h4>
+            <p>Defesas para sobreviver e recuperar posição.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ÁREA DO CLIENTE -->
+    <section id="cliente">
+      <div class="glass">
+        <h3 class="section-title">🔐 Área do Cliente</h3>
+        <p class="section-sub">Crie uma conta ou faça login para acessar.</p>
+
+        <!-- LOGIN -->
+        <div id="loginBox">
+          <div class="grid">
+            <div class="card">
+              <h4>🔑 Login</h4>
+              <p>Entre com seu email e senha.</p>
+
+              <div class="form-row">
+                <label>Email</label>
+                <input id="loginEmail" type="email" placeholder="exemplo@gmail.com">
+              </div>
+
+              <div class="form-row">
+                <label>Senha</label>
+                <input id="loginPass" type="password" placeholder="••••••••">
+              </div>
+
+              <button class="btn btn-primary" id="btnLogin">Entrar</button>
+              <div class="msg" id="loginMsg"></div>
+
+              <p class="small" style="margin-top:12px;">
+                Ainda não tem conta? Clique em “Criar Conta”.
+              </p>
+
+              <button class="btn btn-insta" id="btnShowRegister">📝 Criar Conta</button>
+            </div>
+
+            <div class="card">
+              <h4>🛡️ Privacidade</h4>
+              <p>
+                Seu cliente só acessa a área privada com login.
+                Isso evita pessoas vendo informações que não deveriam.
+              </p>
+              <p class="small">
+                ✅ Login real com Firebase <br>
+                ✅ Email + Senha <br>
+                ✅ Logout automático
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- REGISTRO -->
+        <div id="registerBox" class="hidden">
+          <div class="grid">
+            <div class="card">
+              <h4>📝 Registro</h4>
+              <p>Crie sua conta agora.</p>
+
+              <div class="form-row">
+                <label>Email</label>
+                <input id="regEmail" type="email" placeholder="exemplo@gmail.com">
+              </div>
+
+              <div class="form-row">
+                <label>Senha</label>
+                <input id="regPass" type="password" placeholder="mínimo 6 caracteres">
+              </div>
+
+              <button class="btn btn-primary" id="btnRegister">Criar Conta</button>
+              <div class="msg" id="regMsg"></div>
+
+              <p class="small" style="margin-top:12px;">
+                Já tem conta?
+              </p>
+
+              <button class="btn btn-whats" id="btnShowLogin">🔑 Voltar para Login</button>
+            </div>
+
+            <div class="card">
+              <h4>✅ Dica</h4>
+              <p>
+                Depois que o cliente criar conta, ele já entra na área privada
+                automaticamente.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- ÁREA PRIVADA -->
+        <div id="privateBox" class="hidden">
+          <div class="grid">
+            <div class="card">
+              <h4>✅ Bem-vindo!</h4>
+              <p>Você está logado com:</p>
+              <p id="userEmail" style="margin-top:8px; font-weight:900;"></p>
+
+              <button class="btn btn-whats" id="btnLogout">Sair da Conta</button>
+
+              <p class="small" style="margin-top:12px;">
+                Aqui você pode colocar: histórico de pedidos, promoções privadas, cupons etc.
+              </p>
+            </div>
+
+            <div class="card">
+              <h4>📦 Área Privada (exemplo)</h4>
+              <p>Conteúdo só para clientes:</p>
+              <p class="small">
+                ✅ Promoção secreta <br>
+                ✅ Cupons <br>
+                ✅ Pedidos <br>
+                ✅ Conteúdo exclusivo
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <p class="small" style="margin-top:14px; opacity:0.7;">
+          ⚠️ Se der erro de "domínio não autorizado", você precisa adicionar o domínio no Firebase:
+          Authentication → Settings → Authorized domains → adicionar <b>seunome.github.io</b>
+        </p>
+      </div>
+    </section>
+
+    <!-- CONTATO -->
+    <section id="contato">
+      <div class="glass">
+        <h3 class="section-title">📩 Contato</h3>
+        <p class="section-sub">Clique e fale comigo:</p>
+
+        <div class="btns">
+          <a class="btn btn-whats" href="https://wa.me/55SEUNUMEROAQUI" target="_blank">📲 WhatsApp</a>
+          <a class="btn btn-insta" href="https://instagram.com/SEUINSTAGRAM" target="_blank">📸 Instagram</a>
+          <a class="btn btn-primary" href="#loja">🛒 Ver Loja</a>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      © 2026 WebMarcial — GitHub Pages + Firebase ✅
+    </footer>
+
   </div>
 
-  <!-- CONTEÚDOS -->
-  <section id="conteudos">
-    <h3 class="section-title">📹 Conteúdos</h3>
-    <p class="section-sub">Aulas rápidas e diretas, perfeitas para evoluir.</p>
+  <!-- FIREBASE AUTH -->
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-app.js";
+    import {
+      getAuth,
+      createUserWithEmailAndPassword,
+      signInWithEmailAndPassword,
+      onAuthStateChanged,
+      signOut
+    } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-auth.js";
 
-    <div class="grid">
-      <div class="card">
-        <h4>🔥 Armlock</h4>
-        <p>Aprenda o passo a passo do armlock e os erros mais comuns.</p>
-        <p class="small">✅ Técnica + detalhes</p>
-      </div>
+    /* ===========================================================
+      COLE AQUI O SEU firebaseConfig do Firebase (OBRIGATÓRIO)
+      Vá no Firebase > Configurações do projeto > Adicionar app web
+    ============================================================ */
+    const firebaseConfig = {
+      apiKey: "COLE_AQUI",
+      authDomain: "COLE_AQUI",
+      projectId: "COLE_AQUI",
+      storageBucket: "COLE_AQUI",
+      messagingSenderId: "COLE_AQUI",
+      appId: "COLE_AQUI"
+    };
 
-      <div class="card">
-        <h4>🌀 Raspagens</h4>
-        <p>Saídas de guarda e raspagens simples pra usar no rola.</p>
-        <p class="small">✅ Fácil de aprender</p>
-      </div>
+    // INICIALIZA
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
 
-      <div class="card">
-        <h4>🛡️ Defesa</h4>
-        <p>Defesa de finalizações e posições ruins com segurança.</p>
-        <p class="small">✅ Sobrevivência no tatame</p>
-      </div>
-    </div>
-  </section>
+    // ELEMENTOS
+    const loginBox = document.getElementById("loginBox");
+    const registerBox = document.getElementById("registerBox");
+    const privateBox = document.getElementById("privateBox");
 
-  <!-- LOJA -->
-  <section id="loja">
-    <h3 class="section-title">🛒 Loja</h3>
-    <p class="section-sub">Produtos para treino e competição (modelo).</p>
+    const btnShowRegister = document.getElementById("btnShowRegister");
+    const btnShowLogin = document.getElementById("btnShowLogin");
 
-    <div class="grid">
-      <div class="card">
-        <h4>🥋 Kimono Premium</h4>
-        <p>Kimono resistente para treino pesado.</p>
-        <div class="price">R$ 399,90</div>
-        <a class="btn btn-primary" href="#contato">Comprar</a>
-      </div>
+    const loginEmail = document.getElementById("loginEmail");
+    const loginPass = document.getElementById("loginPass");
+    const btnLogin = document.getElementById("btnLogin");
+    const loginMsg = document.getElementById("loginMsg");
 
-      <div class="card">
-        <h4>👕 Rashguard</h4>
-        <p>Rashguard confortável e firme para No-Gi.</p>
-        <div class="price">R$ 149,90</div>
-        <a class="btn btn-primary" href="#contato">Comprar</a>
-      </div>
+    const regEmail = document.getElementById("regEmail");
+    const regPass = document.getElementById("regPass");
+    const btnRegister = document.getElementById("btnRegister");
+    const regMsg = document.getElementById("regMsg");
 
-      <div class="card">
-        <h4>🎽 Faixa</h4>
-        <p>Faixa oficial com tecido reforçado.</p>
-        <div class="price">R$ 59,90</div>
-        <a class="btn btn-primary" href="#contato">Comprar</a>
-      </div>
-    </div>
+    const userEmail = document.getElementById("userEmail");
+    const btnLogout = document.getElementById("btnLogout");
 
-    <p class="small" style="margin-top:14px; opacity:0.7;">
-      💡 Depois eu posso colocar botão de Pix, Mercado Pago ou link do Checkout.
-    </p>
-  </section>
+    function showLogin(){
+      loginBox.classList.remove("hidden");
+      registerBox.classList.add("hidden");
+      privateBox.classList.add("hidden");
+      loginMsg.textContent = "";
+      regMsg.textContent = "";
+    }
 
-  <!-- CONTATO -->
-  <section id="contato">
-    <h3 class="section-title">📩 Contato</h3>
-    <p class="section-sub">Fale comigo agora mesmo 👇</p>
+    function showRegister(){
+      loginBox.classList.add("hidden");
+      registerBox.classList.remove("hidden");
+      privateBox.classList.add("hidden");
+      loginMsg.textContent = "";
+      regMsg.textContent = "";
+    }
 
-    <div class="grid">
-      <div class="card">
-        <h4>📲 WhatsApp</h4>
-        <p>Atendimento rápido e direto.</p>
-        <a class="btn btn-whats" href="https://wa.me/55SEUNUMEROAQUI" target="_blank">Chamar no WhatsApp</a>
-      </div>
+    function showPrivate(email){
+      loginBox.classList.add("hidden");
+      registerBox.classList.add("hidden");
+      privateBox.classList.remove("hidden");
+      userEmail.textContent = email;
+      loginMsg.textContent = "";
+      regMsg.textContent = "";
+    }
 
-      <div class="card">
-        <h4>📸 Instagram</h4>
-        <p>Veja conteúdos e novidades.</p>
-        <a class="btn btn-insta" href="https://instagram.com/SEUINSTAGRAM" target="_blank">Ir para Instagram</a>
-      </div>
+    // BOTÕES TROCA DE TELA
+    btnShowRegister.addEventListener("click", showRegister);
+    btnShowLogin.addEventListener("click", showLogin);
 
-      <div class="card">
-        <h4>📦 Pedidos</h4>
-        <p>Faça seu pedido e eu te mando os detalhes.</p>
-        <a class="btn btn-primary" href="https://wa.me/55SEUNUMEROAQUI" target="_blank">Fazer Pedido</a>
-      </div>
-    </div>
-  </section>
+    // LOGIN
+    btnLogin.addEventListener("click", async () => {
+      loginMsg.textContent = "";
+      try{
+        const email = loginEmail.value.trim();
+        const pass = loginPass.value.trim();
+        await signInWithEmailAndPassword(auth, email, pass);
+        loginMsg.textContent = "✅ Login feito com sucesso!";
+        loginMsg.className = "msg success";
+      }catch(err){
+        loginMsg.textContent = "❌ Erro no login: " + err.message;
+        loginMsg.className = "msg error";
+      }
+    });
 
-  <footer>
-    © 2026 WebMarcial — Criado com GitHub Pages ✅
-  </footer>
+    // REGISTRO
+    btnRegister.addEventListener("click", async () => {
+      regMsg.textContent = "";
+      try{
+        const email = regEmail.value.trim();
+        const pass = regPass.value.trim();
+        await createUserWithEmailAndPassword(auth, email, pass);
+        regMsg.textContent = "✅ Conta criada! Você já está logado.";
+        regMsg.className = "msg success";
+      }catch(err){
+        regMsg.textContent = "❌ Erro ao criar conta: " + err.message;
+        regMsg.className = "msg error";
+      }
+    });
+
+    // LOGOUT
+    btnLogout.addEventListener("click", async () => {
+      await signOut(auth);
+    });
+
+    // VERIFICAR ESTADO DO LOGIN
+    onAuthStateChanged(auth, (user) => {
+      if(user){
+        showPrivate(user.email);
+      }else{
+        showLogin();
+      }
+    });
+  </script>
 
 </body>
 </html>
