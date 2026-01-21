@@ -89,3 +89,235 @@
 
     nav a:hover{
       text-decoration:underline;
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WebMarcial</title>
+
+  <style>
+    body{
+      margin:0;
+      font-family: Arial, sans-serif;
+      background:#0b0f19;
+      color:#fff;
+      text-align:center;
+    }
+
+    header{
+      padding:60px 20px;
+      background:linear-gradient(135deg,#0a66c2,#7c3aed);
+    }
+
+    header h1{
+      font-size:40px;
+      margin:0;
+    }
+
+    header p{
+      margin-top:10px;
+      font-size:18px;
+      opacity:0.9;
+    }
+
+    nav{
+      margin-top:20px;
+    }
+
+    nav a{
+      color:white;
+      text-decoration:none;
+      margin:0 10px;
+      font-weight:bold;
+    }
+
+    nav a:hover{
+      text-decoration:underline;
+    }
+
+    .container{
+      padding:40px 20px;
+      max-width:900px;
+      margin:auto;
+    }
+
+    .cards{
+      display:grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap:20px;
+      margin-top:30px;
+    }
+
+    .card{
+      background:#141a2a;
+      border-radius:15px;
+      padding:25px;
+      box-shadow:0 0 15px rgba(0,0,0,0.4);
+      transition:0.2s;
+    }
+
+    .card:hover{
+      transform:scale(1.02);
+    }
+
+    button{
+      background:#0a66c2;
+      border:none;
+      padding:12px 20px;
+      border-radius:10px;
+      color:#fff;
+      cursor:pointer;
+      font-size:16px;
+    }
+
+    button:hover{
+      background:#084f95;
+    }
+
+    .btn-whats{
+      background:#25D366;
+    }
+
+    .btn-whats:hover{
+      background:#1da851;
+    }
+
+    .btn-insta{
+      background:#e11d48;
+    }
+
+    .btn-insta:hover{
+      background:#be123c;
+    }
+
+    footer{
+      margin-top:40px;
+      padding:20px;
+      opacity:0.7;
+      font-size:14px;
+    }
+
+    .mini{
+      font-size:14px;
+      opacity:0.8;
+      margin-top:8px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- TOPO -->
+  <header>
+    <h1>🥋 WebMarcial</h1>
+    <p>Loja + Treinos + Conteúdos de Jiu-Jitsu</p>
+
+    <!-- MENU -->
+    <nav>
+      <a href="#inicio">Início</a>
+      <a href="#conteudos">Conteúdos</a>
+      <a href="#loja">Loja</a>
+      <a href="#contato">Contato</a>
+    </nav>
+
+    <br><br>
+
+    <!-- BOTÕES -->
+    <a href="https://wa.me/55SEUNUMEROAQUI" target="_blank">
+      <button class="btn-whats">📲 Falar no WhatsApp</button>
+    </a>
+
+    <a href="https://instagram.com/SEUINSTAGRAM" target="_blank">
+      <button class="btn-insta">📸 Instagram</button>
+    </a>
+
+    <p class="mini">⚠️ Troque SEUNUMEROAQUI e SEUINSTAGRAM pelos seus dados</p>
+  </header>
+
+  <!-- CONTEÚDO -->
+  <div class="container" id="inicio">
+    <h2>Bem-vindo ao WebMarcial 🔥</h2>
+    <p>
+      Aqui você encontra treinos, técnicas e também produtos para treinar e competir.
+      O objetivo é evoluir no Jiu-Jitsu com conteúdo direto e objetivo.
+    </p>
+
+    <!-- CARDS 1 -->
+    <div class="cards" id="conteudos">
+
+      <div class="card">
+        <h3>🔥 Treinos</h3>
+        <p>Aprenda técnicas na prática e evolua rápido no tatame.</p>
+      </div>
+
+      <div class="card">
+        <h3>🥋 Técnicas</h3>
+        <p>Finalizações, raspagens, passagem e defesa bem explicado.</p>
+      </div>
+
+      <div class="card">
+        <h3>📹 Vídeos</h3>
+        <p>Conteúdos curtos estilo YouTube Shorts e vídeos completos.</p>
+      </div>
+
+    </div>
+
+    <!-- LOJA -->
+    <div style="margin-top:50px;" id="loja">
+      <h2>🛒 Loja WebMarcial</h2>
+      <p>Produtos que você pode vender/divulgar:</p>
+
+      <div class="cards">
+
+        <div class="card">
+          <h3>👕 Rashguard</h3>
+          <p>Rashguards para treino e competição.</p>
+          <button onclick="alert('Em breve: página de compra!')">Ver mais</button>
+        </div>
+
+        <div class="card">
+          <h3>🥋 Kimono</h3>
+          <p>Kimonos para iniciantes e atletas avançados.</p>
+          <button onclick="alert('Em breve: página de compra!')">Ver mais</button>
+        </div>
+
+        <div class="card">
+          <h3>🎽 Faixas</h3>
+          <p>Faixas e acessórios para seu treino.</p>
+          <button onclick="alert('Em breve: página de compra!')">Ver mais</button>
+        </div>
+
+      </div>
+
+      <p class="mini">
+        ✅ Quer vender de verdade? Depois eu te ajudo a colocar link de pagamento (Mercado Pago / Pix).
+      </p>
+    </div>
+
+    <!-- CONTATO -->
+    <div style="margin-top:50px;" id="contato">
+      <h2>📩 Contato</h2>
+      <p>Clique e fale direto comigo:</p>
+
+      <a href="https://wa.me/55SEUNUMEROAQUI" target="_blank">
+        <button class="btn-whats">✅ WhatsApp</button>
+      </a>
+
+      <a href="https://instagram.com/SEUINSTAGRAM" target="_blank">
+        <button class="btn-insta">✅ Instagram</button>
+      </a>
+
+      <p class="mini">
+        📌 Dica: troque os links do WhatsApp/Instagram pelos seus.
+      </p>
+    </div>
+
+  </div>
+
+  <footer>
+    © 2026 WebMarcial — Criado com GitHub Pages ✅
+  </footer>
+
+</body>
+</html>
