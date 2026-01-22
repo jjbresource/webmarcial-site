@@ -246,68 +246,6 @@
       margin-bottom:10px;
     }
 
-    .form-row{ margin-top:12px; }
-
-    label{
-      display:block;
-      font-size:12px;
-      margin-bottom:6px;
-      opacity:0.9;
-      font-weight:800;
-    }
-
-    input, textarea{
-      width:100%;
-      padding:12px 12px;
-      border-radius:14px;
-      border:1px solid rgba(255,255,255,0.12);
-      background: rgba(0,0,0,0.20);
-      color:#fff;
-      outline:none;
-      resize:none;
-    }
-
-    .msg{
-      margin-top:10px;
-      font-size:12px;
-      opacity:0.95;
-    }
-
-    .success{ color:#22c55e; }
-    .error{ color:#ff5a5a; }
-
-    .hidden{ display:none !important; }
-
-    .chat-messages{
-      height:180px;
-      overflow:auto;
-      padding:12px;
-      border-radius:16px;
-      background: rgba(255,255,255,0.05);
-      border: 1px solid rgba(255,255,255,0.08);
-    }
-
-    .bubble{
-      padding:10px 12px;
-      border-radius:14px;
-      margin-bottom:8px;
-      max-width: 92%;
-      font-size:13px;
-      line-height:1.4;
-    }
-
-    .bubble.me{
-      background: rgba(124,58,237,0.25);
-      border: 1px solid rgba(124,58,237,0.35);
-      margin-left:auto;
-    }
-
-    .bubble.admin{
-      background: rgba(10,102,194,0.25);
-      border: 1px solid rgba(10,102,194,0.35);
-      margin-right:auto;
-    }
-
     footer{
       margin-top:30px;
       text-align:center;
@@ -351,6 +289,8 @@
 
         <h2>Treine do básico<br/>com vídeos exclusivos</h2>
 
+        <p>Escolha um curso e clique em comprar.</p>
+
         <div class="btns">
           <a class="btn btn-primary" href="#cursos">🎓 Ver Cursos</a>
           <a class="btn btn-insta" href="https://instagram.com/stylejemarcial" target="_blank">📸 Instagram</a>
@@ -359,26 +299,27 @@
       </div>
 
       <div class="glass">
-        <h3 class="section-title">✅ Suporte</h3>
-        <p class="section-sub">Após entrar, você tem chat privado comigo.</p>
+        <h3 class="section-title">✅ Como funciona</h3>
+        <p class="section-sub">Você compra e depois entra na área exclusiva.</p>
 
         <div class="grid">
           <div class="card">
-            <h4>💬 Chat</h4>
-            <p>Tire dúvidas e peça os links.</p>
+            <h4>1) Comprar</h4>
+            <p>O botão vai abrir a página de pagamento.</p>
           </div>
           <div class="card">
-            <h4>🎬 Vídeos</h4>
-            <p>Playlists por modalidade.</p>
+            <h4>2) Login</h4>
+            <p>Cria conta e entra com email e senha.</p>
           </div>
           <div class="card">
-            <h4>🔐 Privado</h4>
-            <p>Só entra logado.</p>
+            <h4>3) Assistir</h4>
+            <p>Vídeos exclusivos dentro do site.</p>
           </div>
         </div>
       </div>
     </div>
 
+    <!-- CURSOS -->
     <section id="cursos">
       <div class="glass">
         <h3 class="section-title">🎓 Cursos</h3>
@@ -389,137 +330,49 @@
             <h4>🥋 Jiu-jitsu</h4>
             <p>Fundamentos, posições e noções básicas.</p>
             <div class="price">R$ 29,90</div>
-            <a class="btn btn-primary" href="COLE_AQUI_LINK_PAGAMENTO_JIU" target="_blank">Comprar</a>
+            <a class="btn btn-primary" href="pagamento.html?curso=jiujitsu">Comprar</a>
           </div>
 
           <div class="card">
             <h4>🥋 Judô</h4>
             <p>Base, pegadas e quedas iniciais.</p>
             <div class="price">R$ 29,90</div>
-            <a class="btn btn-primary" href="COLE_AQUI_LINK_PAGAMENTO_JUDO" target="_blank">Comprar</a>
+            <a class="btn btn-primary" href="pagamento.html?curso=judo">Comprar</a>
           </div>
 
           <div class="card">
             <h4>🥊 Boxe</h4>
             <p>Guarda, jab, direto e movimentação.</p>
             <div class="price">R$ 29,90</div>
-            <a class="btn btn-primary" href="COLE_AQUI_LINK_PAGAMENTO_BOXE" target="_blank">Comprar</a>
+            <a class="btn btn-primary" href="pagamento.html?curso=boxe">Comprar</a>
           </div>
 
           <div class="card">
             <h4>🦵 Muay Thai</h4>
             <p>Chutes, joelhadas e combos básicos.</p>
             <div class="price">R$ 29,90</div>
-            <a class="btn btn-primary" href="COLE_AQUI_LINK_PAGAMENTO_MUAY" target="_blank">Comprar</a>
+            <a class="btn btn-primary" href="pagamento.html?curso=muaythai">Comprar</a>
           </div>
         </div>
       </div>
     </section>
 
+    <!-- ÁREA EXCLUSIVA -->
     <section id="cliente">
       <div class="glass">
         <h3 class="section-title">🔐 Área Exclusiva</h3>
-        <p class="section-sub">Login / Registro + vídeos + chat privado</p>
+        <p class="section-sub">Login / Registro (Firebase)</p>
 
-        <div id="loginBox">
-          <div class="grid">
-            <div class="card">
-              <h4>🔑 Login</h4>
+        <p class="section-sub">
+          ✅ Depois de logar, você vai ter acesso aos vídeos.
+        </p>
 
-              <div class="form-row">
-                <label>Email</label>
-                <input id="loginEmail" type="email" placeholder="exemplo@gmail.com">
-              </div>
-
-              <div class="form-row">
-                <label>Senha</label>
-                <input id="loginPass" type="password" placeholder="••••••••">
-              </div>
-
-              <button class="btn btn-primary" id="btnLogin">Entrar</button>
-              <div class="msg" id="loginMsg"></div>
-
-              <p class="small" style="margin-top:12px;">Ainda não tem conta?</p>
-              <button class="btn btn-insta" id="btnShowRegister">📝 Criar Conta</button>
-            </div>
-
-            <div class="card">
-              <h4>✅ O que tem aqui</h4>
-              <p class="small">
-                ✅ Vídeos por modalidade<br>
-                ✅ Chat privado comigo<br>
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <div id="registerBox" class="hidden">
-          <div class="grid">
-            <div class="card">
-              <h4>📝 Registro</h4>
-
-              <div class="form-row">
-                <label>Email</label>
-                <input id="regEmail" type="email" placeholder="exemplo@gmail.com">
-              </div>
-
-              <div class="form-row">
-                <label>Senha</label>
-                <input id="regPass" type="password" placeholder="mínimo 6 caracteres">
-              </div>
-
-              <button class="btn btn-primary" id="btnRegister">Criar Conta</button>
-              <div class="msg" id="regMsg"></div>
-
-              <p class="small" style="margin-top:12px;">Já tem conta?</p>
-              <button class="btn btn-primary" id="btnShowLogin">🔑 Voltar para Login</button>
-            </div>
-
-            <div class="card">
-              <h4>🔒 Privacidade</h4>
-              <p>Só entra logado.</p>
-            </div>
-          </div>
-        </div>
-
-        <div id="privateBox" class="hidden">
-          <div class="grid">
-            <div class="card">
-              <h4>✅ Você está logado</h4>
-              <p>Email:</p>
-              <p id="userEmail" style="margin-top:8px; font-weight:900;"></p>
-
-              <button class="btn btn-primary" id="btnLogout">Sair da Conta</button>
-            </div>
-
-            <div class="card">
-              <h4>🎬 Vídeos</h4>
-              <p>Playlists básicas:</p>
-
-              <div class="btns" style="margin-top:12px;">
-                <a class="btn btn-primary" href="https://www.youtube.com/playlist?list=PL0Y3uoaUtre8FZYwL6K9On0XGpooqXxSb" target="_blank">🥋 Jiu-jitsu</a>
-                <a class="btn btn-primary" href="https://www.youtube.com/playlist?list=PLtz539PTepc16H2iu5F3Q3D7_He1EYlIQ" target="_blank">🥋 Judô</a>
-                <a class="btn btn-primary" href="https://www.youtube.com/playlist?list=PLMV20-Vw0tTyUSzUh26z1-vWHP_e2X62x" target="_blank">🥊 Boxe</a>
-                <a class="btn btn-primary" href="https://youtube.com/playlist?list=PLjDOOcuxxZJDCMGvK-eUMwCGZA-AnDKIu&si=lTvmv-F8W44tCHkz" target="_blank">🦵 Muay Thai</a>
-              </div>
-            </div>
-          </div>
-
-          <div style="margin-top:14px;">
-            <div class="card">
-              <h4>💬 Chat Privado</h4>
-
-              <div class="chat-messages" id="chatMessages"></div>
-
-              <div class="form-row">
-                <label>Sua mensagem</label>
-                <textarea id="chatInput" rows="3" placeholder="Digite sua mensagem..."></textarea>
-              </div>
-
-              <button class="btn btn-primary" id="btnSendMessage">Enviar</button>
-              <div class="msg" id="chatMsg"></div>
-            </div>
-          </div>
+        <!-- Aqui você pode colocar seu sistema de login depois -->
+        <div class="card">
+          <h4>✅ Próximo passo</h4>
+          <p>
+            Se quiser eu volto com a versão completa com login + chat aqui também.
+          </p>
         </div>
       </div>
     </section>
@@ -537,194 +390,9 @@
     </section>
 
     <footer>
-      © 2026 WebMarcial — GitHub Pages + Firebase ✅
+      © 2026 WebMarcial — GitHub Pages ✅
     </footer>
 
   </div>
-
-  <script type="module">
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-app.js";
-    import {
-      getAuth,
-      createUserWithEmailAndPassword,
-      signInWithEmailAndPassword,
-      onAuthStateChanged,
-      signOut
-    } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-auth.js";
-
-    import {
-      getFirestore,
-      collection,
-      addDoc,
-      query,
-      orderBy,
-      onSnapshot,
-      serverTimestamp
-    } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-firestore.js";
-
-    const firebaseConfig = {
-      apiKey: "AIzaSyACNJg9GYOOFhCfOQBkKE_Wy2v51_-SGoE",
-      authDomain: "stylersmarcial.firebaseapp.com",
-      projectId: "stylersmarcial",
-      storageBucket: "stylersmarcial.firebasestorage.app",
-      messagingSenderId: "742809331074",
-      appId: "1:742809331074:web:ef0d36b9871c11f2815b9b",
-      measurementId: "G-5MT6WBCRNF"
-    };
-
-    const app = initializeApp(firebaseConfig);
-    const auth = getAuth(app);
-    const db = getFirestore(app);
-
-    const loginBox = document.getElementById("loginBox");
-    const registerBox = document.getElementById("registerBox");
-    const privateBox = document.getElementById("privateBox");
-
-    const btnShowRegister = document.getElementById("btnShowRegister");
-    const btnShowLogin = document.getElementById("btnShowLogin");
-
-    const loginEmail = document.getElementById("loginEmail");
-    const loginPass = document.getElementById("loginPass");
-    const btnLogin = document.getElementById("btnLogin");
-    const loginMsg = document.getElementById("loginMsg");
-
-    const regEmail = document.getElementById("regEmail");
-    const regPass = document.getElementById("regPass");
-    const btnRegister = document.getElementById("btnRegister");
-    const regMsg = document.getElementById("regMsg");
-
-    const userEmail = document.getElementById("userEmail");
-    const btnLogout = document.getElementById("btnLogout");
-
-    // CHAT
-    const chatMessages = document.getElementById("chatMessages");
-    const chatInput = document.getElementById("chatInput");
-    const btnSendMessage = document.getElementById("btnSendMessage");
-    const chatMsg = document.getElementById("chatMsg");
-
-    function showLogin(){
-      loginBox.classList.remove("hidden");
-      registerBox.classList.add("hidden");
-      privateBox.classList.add("hidden");
-      loginMsg.textContent = "";
-      regMsg.textContent = "";
-    }
-
-    function showRegister(){
-      loginBox.classList.add("hidden");
-      registerBox.classList.remove("hidden");
-      privateBox.classList.add("hidden");
-      loginMsg.textContent = "";
-      regMsg.textContent = "";
-    }
-
-    function showPrivate(email){
-      loginBox.classList.add("hidden");
-      registerBox.classList.add("hidden");
-      privateBox.classList.remove("hidden");
-      userEmail.textContent = email;
-      loginMsg.textContent = "";
-      regMsg.textContent = "";
-    }
-
-    btnShowRegister?.addEventListener("click", showRegister);
-    btnShowLogin?.addEventListener("click", showLogin);
-
-    btnLogin.addEventListener("click", async () => {
-      loginMsg.textContent = "";
-      try{
-        const email = loginEmail.value.trim();
-        const pass = loginPass.value.trim();
-        await signInWithEmailAndPassword(auth, email, pass);
-        loginMsg.textContent = "✅ Login feito com sucesso!";
-        loginMsg.className = "msg success";
-      }catch(err){
-        loginMsg.textContent = "❌ Erro no login: " + err.message;
-        loginMsg.className = "msg error";
-      }
-    });
-
-    btnRegister.addEventListener("click", async () => {
-      regMsg.textContent = "";
-      try{
-        const email = regEmail.value.trim();
-        const pass = regPass.value.trim();
-        await createUserWithEmailAndPassword(auth, email, pass);
-        regMsg.textContent = "✅ Conta criada! Você já está logado.";
-        regMsg.className = "msg success";
-      }catch(err){
-        regMsg.textContent = "❌ Erro ao criar conta: " + err.message;
-        regMsg.className = "msg error";
-      }
-    });
-
-    btnLogout.addEventListener("click", async () => {
-      await signOut(auth);
-    });
-
-    let stopChatListener = null;
-
-    onAuthStateChanged(auth, (user) => {
-      if(user){
-        showPrivate(user.email);
-
-        const userChatRef = collection(db, "chats", user.uid, "messages");
-        const q = query(userChatRef, orderBy("createdAt", "asc"));
-
-        if(stopChatListener) stopChatListener();
-
-        stopChatListener = onSnapshot(q, (snap) => {
-          chatMessages.innerHTML = "";
-          snap.forEach((doc) => {
-            const data = doc.data();
-            const div = document.createElement("div");
-            div.className = "bubble " + (data.sender === "user" ? "me" : "admin");
-            div.textContent = data.text || "";
-            chatMessages.appendChild(div);
-          });
-          chatMessages.scrollTop = chatMessages.scrollHeight;
-        });
-
-      }else{
-        showLogin();
-        if(stopChatListener) stopChatListener();
-      }
-    });
-
-    btnSendMessage.addEventListener("click", async () => {
-      chatMsg.textContent = "";
-      try{
-        const user = auth.currentUser;
-        if(!user){
-          chatMsg.textContent = "❌ Você precisa estar logado.";
-          chatMsg.className = "msg error";
-          return;
-        }
-
-        const text = chatInput.value.trim();
-        if(!text){
-          chatMsg.textContent = "❌ Digite uma mensagem.";
-          chatMsg.className = "msg error";
-          return;
-        }
-
-        const userChatRef = collection(db, "chats", user.uid, "messages");
-
-        await addDoc(userChatRef, {
-          text,
-          sender: "user",
-          createdAt: serverTimestamp()
-        });
-
-        chatInput.value = "";
-        chatMsg.textContent = "✅ Mensagem enviada!";
-        chatMsg.className = "msg success";
-
-      }catch(err){
-        chatMsg.textContent = "❌ Erro: " + err.message;
-        chatMsg.className = "msg error";
-      }
-    });
-  </script>
 </body>
 </html>
