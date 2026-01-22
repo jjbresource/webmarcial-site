@@ -6,11 +6,7 @@
   <title>WebMarcial - Cursos</title>
 
   <style>
-    *{
-      margin:0;
-      padding:0;
-      box-sizing:border-box;
-    }
+    *{ margin:0; padding:0; box-sizing:border-box; }
 
     body{
       font-family: Arial, sans-serif;
@@ -20,7 +16,6 @@
       min-height:100vh;
     }
 
-    /* FUNDO BONITO */
     .bg{
       position: fixed;
       inset: 0;
@@ -40,14 +35,12 @@
       pointer-events: none;
     }
 
-    /* CONTAINER */
     .wrap{
       max-width:1100px;
       margin: 30px auto;
       padding: 0 18px 50px 18px;
     }
 
-    /* TOPBAR */
     .topbar{
       display:flex;
       align-items:center;
@@ -115,7 +108,6 @@
       transform: translateY(-1px);
     }
 
-    /* HERO */
     .hero{
       display:grid;
       grid-template-columns: 1.2fr 0.8fr;
@@ -159,7 +151,6 @@
       margin-bottom:16px;
     }
 
-    /* BOTÕES */
     .btns{
       display:flex;
       flex-wrap:wrap;
@@ -187,51 +178,21 @@
       background: linear-gradient(135deg, #0a66c2, #7c3aed);
       box-shadow: 0 14px 35px rgba(124,58,237,0.25);
     }
-
-    .btn-primary:hover{
-      transform: translateY(-2px);
-      filter: brightness(1.05);
-    }
-
-    .btn-whats{
-      background: rgba(37,211,102,0.20);
-      border: 1px solid rgba(37,211,102,0.35);
-    }
-
-    .btn-whats:hover{
-      background: rgba(37,211,102,0.28);
-      transform: translateY(-2px);
-    }
+    .btn-primary:hover{ transform: translateY(-2px); filter: brightness(1.05); }
 
     .btn-insta{
       background: rgba(225,29,72,0.20);
       border: 1px solid rgba(225,29,72,0.35);
     }
-
-    .btn-insta:hover{
-      background: rgba(225,29,72,0.28);
-      transform: translateY(-2px);
-    }
+    .btn-insta:hover{ background: rgba(225,29,72,0.28); transform: translateY(-2px); }
 
     .btn-tiktok{
       background: rgba(255,255,255,0.12);
       border: 1px solid rgba(255,255,255,0.18);
     }
+    .btn-tiktok:hover{ background: rgba(255,255,255,0.18); transform: translateY(-2px); }
 
-    .btn-tiktok:hover{
-      background: rgba(255,255,255,0.18);
-      transform: translateY(-2px);
-    }
-
-    .small{
-      font-size:12px;
-      opacity:0.75;
-      margin-top:10px;
-    }
-
-    section{
-      margin-top:18px;
-    }
+    section{ margin-top:18px; }
 
     .section-title{
       font-size:18px;
@@ -285,10 +246,7 @@
       margin-bottom:10px;
     }
 
-    /* LOGIN */
-    .form-row{
-      margin-top:12px;
-    }
+    .form-row{ margin-top:12px; }
 
     label{
       display:block;
@@ -298,7 +256,7 @@
       font-weight:800;
     }
 
-    input{
+    input, textarea{
       width:100%;
       padding:12px 12px;
       border-radius:14px;
@@ -306,10 +264,7 @@
       background: rgba(0,0,0,0.20);
       color:#fff;
       outline:none;
-    }
-
-    input::placeholder{
-      color: rgba(255,255,255,0.45);
+      resize:none;
     }
 
     .msg{
@@ -323,6 +278,36 @@
 
     .hidden{ display:none !important; }
 
+    .chat-messages{
+      height:180px;
+      overflow:auto;
+      padding:12px;
+      border-radius:16px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .bubble{
+      padding:10px 12px;
+      border-radius:14px;
+      margin-bottom:8px;
+      max-width: 92%;
+      font-size:13px;
+      line-height:1.4;
+    }
+
+    .bubble.me{
+      background: rgba(124,58,237,0.25);
+      border: 1px solid rgba(124,58,237,0.35);
+      margin-left:auto;
+    }
+
+    .bubble.admin{
+      background: rgba(10,102,194,0.25);
+      border: 1px solid rgba(10,102,194,0.35);
+      margin-right:auto;
+    }
+
     footer{
       margin-top:30px;
       text-align:center;
@@ -331,15 +316,9 @@
     }
 
     @media (max-width: 900px){
-      .hero{
-        grid-template-columns: 1fr;
-      }
-      nav{
-        display:none;
-      }
-      .hero h2{
-        font-size:28px;
-      }
+      .hero{ grid-template-columns: 1fr; }
+      nav{ display:none; }
+      .hero h2{ font-size:28px; }
     }
   </style>
 </head>
@@ -350,7 +329,6 @@
 
   <div class="wrap">
 
-    <!-- TOPBAR -->
     <div class="topbar">
       <div class="brand">
         <div class="logo">🥋</div>
@@ -367,57 +345,44 @@
       </nav>
     </div>
 
-    <!-- HERO -->
     <div class="hero">
       <div class="glass">
-        <div class="badge">🔥 Pagou, entra na área exclusiva</div>
+        <div class="badge">🔥 Compre e acesse o básico em vídeo</div>
 
         <h2>Treine do básico<br/>com vídeos exclusivos</h2>
 
-        <p>
-          Escolha sua modalidade, compre e tenha acesso aos vídeos básicos.
-          Para assistir é necessário estar <b>logado</b>.
-        </p>
-
         <div class="btns">
           <a class="btn btn-primary" href="#cursos">🎓 Ver Cursos</a>
-          <a class="btn btn-whats" href="https://wa.me/55SEUNUMEROAQUI" target="_blank">📲 WhatsApp</a>
           <a class="btn btn-insta" href="https://instagram.com/stylejemarcial" target="_blank">📸 Instagram</a>
           <a class="btn btn-tiktok" href="https://www.tiktok.com/@stylersmarcial0" target="_blank">🎵 TikTok</a>
         </div>
-
-        <p class="small">
-          ⚠️ Troque <b>SEUNUMEROAQUI</b> pelo seu WhatsApp.<br>
-          ✅ Troque os links COLE_AQUI pelos links do pagamento e vídeos.
-        </p>
       </div>
 
       <div class="glass">
-        <h3 class="section-title">✅ Como funciona</h3>
-        <p class="section-sub">Bem simples e direto:</p>
+        <h3 class="section-title">✅ Suporte</h3>
+        <p class="section-sub">Após entrar, você tem chat privado comigo.</p>
 
         <div class="grid">
           <div class="card">
-            <h4>1) Compra</h4>
-            <p>Escolhe o curso e paga pelo link.</p>
+            <h4>💬 Chat</h4>
+            <p>Tire dúvidas e peça os links.</p>
           </div>
           <div class="card">
-            <h4>2) Login</h4>
-            <p>Cria conta e entra na área exclusiva.</p>
+            <h4>🎬 Vídeos</h4>
+            <p>Playlists por modalidade.</p>
           </div>
           <div class="card">
-            <h4>3) Acesso</h4>
-            <p>Assiste os vídeos do básico.</p>
+            <h4>🔐 Privado</h4>
+            <p>Só entra logado.</p>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- CURSOS -->
     <section id="cursos">
       <div class="glass">
         <h3 class="section-title">🎓 Cursos</h3>
-        <p class="section-sub">Escolha uma modalidade e clique em comprar.</p>
+        <p class="section-sub">Clique em comprar para ir ao pagamento.</p>
 
         <div class="grid">
           <div class="card">
@@ -447,33 +412,19 @@
             <div class="price">R$ 29,90</div>
             <a class="btn btn-primary" href="COLE_AQUI_LINK_PAGAMENTO_MUAY" target="_blank">Comprar</a>
           </div>
-
-          <div class="card">
-            <h4>🤼 Wrestling</h4>
-            <p>Quedas, entradas e controle inicial.</p>
-            <div class="price">R$ 29,90</div>
-            <a class="btn btn-primary" href="COLE_AQUI_LINK_PAGAMENTO_WRESTLING" target="_blank">Comprar</a>
-          </div>
         </div>
-
-        <p class="small" style="margin-top:14px; opacity:0.75;">
-          ✅ Depois do pagamento o aluno entra na <b>Área Exclusiva</b> para assistir os vídeos.
-        </p>
       </div>
     </section>
 
-    <!-- ÁREA DO CLIENTE -->
     <section id="cliente">
       <div class="glass">
         <h3 class="section-title">🔐 Área Exclusiva</h3>
-        <p class="section-sub">Faça login ou crie uma conta.</p>
+        <p class="section-sub">Login / Registro + vídeos + chat privado</p>
 
-        <!-- LOGIN -->
         <div id="loginBox">
           <div class="grid">
             <div class="card">
               <h4>🔑 Login</h4>
-              <p>Entre com seu email e senha.</p>
 
               <div class="form-row">
                 <label>Email</label>
@@ -488,31 +439,24 @@
               <button class="btn btn-primary" id="btnLogin">Entrar</button>
               <div class="msg" id="loginMsg"></div>
 
-              <p class="small" style="margin-top:12px;">
-                Ainda não tem conta?
-              </p>
-
+              <p class="small" style="margin-top:12px;">Ainda não tem conta?</p>
               <button class="btn btn-insta" id="btnShowRegister">📝 Criar Conta</button>
             </div>
 
             <div class="card">
-              <h4>✅ Acesso aos vídeos</h4>
-              <p>
-                Após login, você terá acesso aos conteúdos básicos das modalidades.
-              </p>
+              <h4>✅ O que tem aqui</h4>
               <p class="small">
-                ⚠️ Você vai me mandar os links dos vídeos e eu coloco certinho.
+                ✅ Vídeos por modalidade<br>
+                ✅ Chat privado comigo<br>
               </p>
             </div>
           </div>
         </div>
 
-        <!-- REGISTRO -->
         <div id="registerBox" class="hidden">
           <div class="grid">
             <div class="card">
               <h4>📝 Registro</h4>
-              <p>Crie sua conta agora.</p>
 
               <div class="form-row">
                 <label>Email</label>
@@ -527,21 +471,17 @@
               <button class="btn btn-primary" id="btnRegister">Criar Conta</button>
               <div class="msg" id="regMsg"></div>
 
-              <p class="small" style="margin-top:12px;">
-                Já tem conta?
-              </p>
-
-              <button class="btn btn-whats" id="btnShowLogin">🔑 Voltar para Login</button>
+              <p class="small" style="margin-top:12px;">Já tem conta?</p>
+              <button class="btn btn-primary" id="btnShowLogin">🔑 Voltar para Login</button>
             </div>
 
             <div class="card">
               <h4>🔒 Privacidade</h4>
-              <p>Só entra na área exclusiva quem estiver logado.</p>
+              <p>Só entra logado.</p>
             </div>
           </div>
         </div>
 
-        <!-- ÁREA PRIVADA -->
         <div id="privateBox" class="hidden">
           <div class="grid">
             <div class="card">
@@ -549,47 +489,47 @@
               <p>Email:</p>
               <p id="userEmail" style="margin-top:8px; font-weight:900;"></p>
 
-              <button class="btn btn-whats" id="btnLogout">Sair da Conta</button>
-
-              <p class="small" style="margin-top:12px;">
-                Agora você pode acessar os vídeos básicos.
-              </p>
+              <button class="btn btn-primary" id="btnLogout">Sair da Conta</button>
             </div>
 
             <div class="card">
-              <h4>🎬 Vídeos Exclusivos</h4>
-              <p>Escolha a modalidade:</p>
+              <h4>🎬 Vídeos</h4>
+              <p>Playlists básicas:</p>
 
               <div class="btns" style="margin-top:12px;">
-                <a class="btn btn-primary" href="COLE_LINK_VIDEO_JIU" target="_blank">🥋 Jiu-jitsu</a>
-                <a class="btn btn-primary" href="COLE_LINK_VIDEO_JUDO" target="_blank">🥋 Judô</a>
-                <a class="btn btn-primary" href="COLE_LINK_VIDEO_BOXE" target="_blank">🥊 Boxe</a>
-                <a class="btn btn-primary" href="COLE_LINK_VIDEO_MUAY" target="_blank">🦵 Muay Thai</a>
-                <a class="btn btn-primary" href="COLE_LINK_VIDEO_WRESTLING" target="_blank">🤼 Wrestling</a>
+                <a class="btn btn-primary" href="https://www.youtube.com/playlist?list=PL0Y3uoaUtre8FZYwL6K9On0XGpooqXxSb" target="_blank">🥋 Jiu-jitsu</a>
+                <a class="btn btn-primary" href="https://www.youtube.com/playlist?list=PLtz539PTepc16H2iu5F3Q3D7_He1EYlIQ" target="_blank">🥋 Judô</a>
+                <a class="btn btn-primary" href="https://www.youtube.com/playlist?list=PLMV20-Vw0tTyUSzUh26z1-vWHP_e2X62x" target="_blank">🥊 Boxe</a>
+                <a class="btn btn-primary" href="https://youtube.com/playlist?list=PLjDOOcuxxZJDCMGvK-eUMwCGZA-AnDKIu&si=lTvmv-F8W44tCHkz" target="_blank">🦵 Muay Thai</a>
+              </div>
+            </div>
+          </div>
+
+          <div style="margin-top:14px;">
+            <div class="card">
+              <h4>💬 Chat Privado</h4>
+
+              <div class="chat-messages" id="chatMessages"></div>
+
+              <div class="form-row">
+                <label>Sua mensagem</label>
+                <textarea id="chatInput" rows="3" placeholder="Digite sua mensagem..."></textarea>
               </div>
 
-              <p class="small" style="margin-top:10px;">
-                ✅ Você vai me mandar os links dos vídeos e eu coloco aqui.
-              </p>
+              <button class="btn btn-primary" id="btnSendMessage">Enviar</button>
+              <div class="msg" id="chatMsg"></div>
             </div>
           </div>
         </div>
-
-        <p class="small" style="margin-top:14px; opacity:0.7;">
-          ⚠️ Se der erro de "domínio não autorizado", vá no Firebase:
-          Authentication → Settings → Authorized domains → adicionar <b>seuusuario.github.io</b>
-        </p>
       </div>
     </section>
 
-    <!-- CONTATO -->
     <section id="contato">
       <div class="glass">
         <h3 class="section-title">📩 Contato</h3>
-        <p class="section-sub">Clique e fale comigo:</p>
+        <p class="section-sub">Minhas redes:</p>
 
         <div class="btns">
-          <a class="btn btn-whats" href="https://wa.me/55SEUNUMEROAQUI" target="_blank">📲 WhatsApp</a>
           <a class="btn btn-insta" href="https://instagram.com/stylejemarcial" target="_blank">📸 Instagram</a>
           <a class="btn btn-tiktok" href="https://www.tiktok.com/@stylersmarcial0" target="_blank">🎵 TikTok</a>
         </div>
@@ -602,7 +542,6 @@
 
   </div>
 
-  <!-- FIREBASE AUTH -->
   <script type="module">
     import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-app.js";
     import {
@@ -613,18 +552,29 @@
       signOut
     } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-auth.js";
 
-    // COLE AQUI O firebaseConfig DO SEU FIREBASE
+    import {
+      getFirestore,
+      collection,
+      addDoc,
+      query,
+      orderBy,
+      onSnapshot,
+      serverTimestamp
+    } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-firestore.js";
+
     const firebaseConfig = {
-      apiKey: "COLE_AQUI",
-      authDomain: "COLE_AQUI",
-      projectId: "COLE_AQUI",
-      storageBucket: "COLE_AQUI",
-      messagingSenderId: "COLE_AQUI",
-      appId: "COLE_AQUI"
+      apiKey: "AIzaSyACNJg9GYOOFhCfOQBkKE_Wy2v51_-SGoE",
+      authDomain: "stylersmarcial.firebaseapp.com",
+      projectId: "stylersmarcial",
+      storageBucket: "stylersmarcial.firebasestorage.app",
+      messagingSenderId: "742809331074",
+      appId: "1:742809331074:web:ef0d36b9871c11f2815b9b",
+      measurementId: "G-5MT6WBCRNF"
     };
 
     const app = initializeApp(firebaseConfig);
     const auth = getAuth(app);
+    const db = getFirestore(app);
 
     const loginBox = document.getElementById("loginBox");
     const registerBox = document.getElementById("registerBox");
@@ -646,6 +596,12 @@
     const userEmail = document.getElementById("userEmail");
     const btnLogout = document.getElementById("btnLogout");
 
+    // CHAT
+    const chatMessages = document.getElementById("chatMessages");
+    const chatInput = document.getElementById("chatInput");
+    const btnSendMessage = document.getElementById("btnSendMessage");
+    const chatMsg = document.getElementById("chatMsg");
+
     function showLogin(){
       loginBox.classList.remove("hidden");
       registerBox.classList.add("hidden");
@@ -656,9 +612,8 @@
 
     function showRegister(){
       loginBox.classList.add("hidden");
-      registerBox.classList.add("hidden");
-      privateBox.classList.add("hidden");
       registerBox.classList.remove("hidden");
+      privateBox.classList.add("hidden");
       loginMsg.textContent = "";
       regMsg.textContent = "";
     }
@@ -707,14 +662,69 @@
       await signOut(auth);
     });
 
+    let stopChatListener = null;
+
     onAuthStateChanged(auth, (user) => {
       if(user){
         showPrivate(user.email);
+
+        const userChatRef = collection(db, "chats", user.uid, "messages");
+        const q = query(userChatRef, orderBy("createdAt", "asc"));
+
+        if(stopChatListener) stopChatListener();
+
+        stopChatListener = onSnapshot(q, (snap) => {
+          chatMessages.innerHTML = "";
+          snap.forEach((doc) => {
+            const data = doc.data();
+            const div = document.createElement("div");
+            div.className = "bubble " + (data.sender === "user" ? "me" : "admin");
+            div.textContent = data.text || "";
+            chatMessages.appendChild(div);
+          });
+          chatMessages.scrollTop = chatMessages.scrollHeight;
+        });
+
       }else{
         showLogin();
+        if(stopChatListener) stopChatListener();
+      }
+    });
+
+    btnSendMessage.addEventListener("click", async () => {
+      chatMsg.textContent = "";
+      try{
+        const user = auth.currentUser;
+        if(!user){
+          chatMsg.textContent = "❌ Você precisa estar logado.";
+          chatMsg.className = "msg error";
+          return;
+        }
+
+        const text = chatInput.value.trim();
+        if(!text){
+          chatMsg.textContent = "❌ Digite uma mensagem.";
+          chatMsg.className = "msg error";
+          return;
+        }
+
+        const userChatRef = collection(db, "chats", user.uid, "messages");
+
+        await addDoc(userChatRef, {
+          text,
+          sender: "user",
+          createdAt: serverTimestamp()
+        });
+
+        chatInput.value = "";
+        chatMsg.textContent = "✅ Mensagem enviada!";
+        chatMsg.className = "msg success";
+
+      }catch(err){
+        chatMsg.textContent = "❌ Erro: " + err.message;
+        chatMsg.className = "msg error";
       }
     });
   </script>
-
 </body>
 </html>
